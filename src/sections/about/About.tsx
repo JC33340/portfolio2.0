@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import { portfolioContext } from '../../App'
 import SectionHeader from '../../components/SectionHeader'
 import SmallHeader from '../../components/SmallHeader'
@@ -92,14 +92,14 @@ const About = () => {
     return (
         <div
             ref={aboutRef}
-            className="h-[100vh] bg-darkgray grid grid-cols-2 gap-x-6 gap-y-10 items-start p-8 text-platinum"
+            className="min-h-screen bg-darkgray grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-10 items-start p-8 text-platinum"
             id="about-section"
         >
             <motion.div
                 className="flex flex-col gap-y-10"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                viewport={{ amount: 0.5 }}
+                viewport={{ amount: 0.5, once: true }}
             >
                 <SectionHeader text="About Me" />
                 <div>
@@ -126,7 +126,7 @@ const About = () => {
                 className=" flex flex-col gap-y-10 h-full"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                viewport={{ amount: 0.5 }}
+                viewport={{ amount: 0.5, once: true }}
             >
                 <SectionHeader text="Skills" />
                 <div className="flex flex-col h-full gap-y-8">
