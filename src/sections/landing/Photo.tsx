@@ -1,13 +1,12 @@
-import profilePic from '/profilePic.png'
-
 const Photo = () => {
     return (
         <div>
-            <img
+            {/* <img
                 className="h-80 rounded-[50%]"
-                src={profilePic}
+                src="/profilePic.png"
                 alt="Profile picture"
-            />
+            /> */}
+            <img className="h-100 rounded-lg" src="/test.png" alt="test pic" />
         </div>
     )
 }

@@ -1,0 +1,31 @@
+import type { EducationItemType } from './About'
+
+type EducationItemComponentType = {
+    item: EducationItemType
+}
+
+const EducationItem = ({ item }: EducationItemComponentType) => {
+    return (
+        <div className="flex flex-col gap-y-2">
+            <p>
+                {item.course && <span>{item.course} &#x2022; </span>}
+                <span className="font-semibold whitespace-break-spaces">
+                    {item.institute}
+                </span>{' '}
+                <span className="opacity-50">
+                    &#40;{item.start}
+                    {item.start && ' - '}
+                    {item.end || ' current'}&#41;
+                </span>
+            </p>
+            {item.grade && <p>Grade: {item.grade}</p>}
+            <ul>
+                {item.information?.map((line) => (
+                    <li className="text-sm opacity-70">&#x2022; {line}</li>
+                ))}
+            </ul>
+        </div>
+    )
+}
+
+export default EducationItem
