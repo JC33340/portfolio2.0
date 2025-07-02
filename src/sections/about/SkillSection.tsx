@@ -1,5 +1,6 @@
 import type { SkillsType } from './About'
-import SmallHeader from '../../components/SmallHeader'
+import SmallerHeader from '../../components/SmallerHeader'
+import TechnologyIcon from '../../components/icons/TechnologyIcon'
 
 type SkillsSectionType = {
     item: SkillsType
@@ -7,13 +8,13 @@ type SkillsSectionType = {
 
 const SkillsSection = ({ item }: SkillsSectionType) => {
     return (
-        <div className="flex flex-col gap-y-2">
-            <SmallHeader text={item.category} />
-            <ul className="grid grid-cols-3 gap-y-2">
-                {item.skills.map((skill) => (
-                    <li className="opacity-70">&#x2022; {skill}</li>
+        <div className="flex flex-col gap-y-2 bg-grayblue p-4 rounded-lg shadow-lg w-full h-fit">
+            <SmallerHeader text={item.category} />
+            <div className="flex gap-x-4 gap-y-4 flex-wrap">
+                {item.skills.map((tech, i) => (
+                    <TechnologyIcon key={i} tech={tech} />
                 ))}
-            </ul>
+            </div>
         </div>
     )
 }

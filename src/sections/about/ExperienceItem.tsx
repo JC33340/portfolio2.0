@@ -1,14 +1,14 @@
-import type { EducationItemType } from './About'
+import type { ExperienceItemType } from './About'
 
-type EducationItemComponentType = {
-    item: EducationItemType
+type ExperienceItemComponentType = {
+    item: ExperienceItemType
 }
 
-const EducationItem = ({ item }: EducationItemComponentType) => {
+const ExperienceItem = ({ item }: ExperienceItemComponentType) => {
     return (
         <div className="flex flex-col gap-y-2">
             <p>
-                {item.course && <span>{item.course} &#x2022; </span>}
+                {item.title && <span>{item.title} &#x2022; </span>}
                 <span className="font-semibold whitespace-break-spaces">
                     {item.institute}
                 </span>{' '}
@@ -19,7 +19,7 @@ const EducationItem = ({ item }: EducationItemComponentType) => {
                 </span>
             </p>
             {item.grade && <p>Grade: {item.grade}</p>}
-            <ul>
+            <ul className="flex flex-col gap-y-2">
                 {item.information?.map((line) => (
                     <li className="text-sm opacity-70">&#x2022; {line}</li>
                 ))}
@@ -28,4 +28,4 @@ const EducationItem = ({ item }: EducationItemComponentType) => {
     )
 }
 
-export default EducationItem
+export default ExperienceItem

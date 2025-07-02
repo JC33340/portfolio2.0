@@ -1,6 +1,7 @@
 import './App.css'
 import Landing from './sections/landing/Landing'
 import About from './sections/about/About'
+import Projects from './sections/projects/Projects'
 import { createContext, useRef } from 'react'
 
 type portfolioContextType = {
@@ -15,6 +16,7 @@ function App() {
             <portfolioContext.Provider value={{ aboutRef }}>
                 <Landing />
                 <About />
+                <Projects />
             </portfolioContext.Provider>
         </div>
     )

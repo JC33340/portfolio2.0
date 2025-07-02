@@ -2,13 +2,15 @@ import { useContext } from 'react'
 import { portfolioContext } from '../../App'
 import SectionHeader from '../../components/SectionHeader'
 import SmallHeader from '../../components/SmallHeader'
-import EducationItem from './EducationItem'
+import ExperienceItem from './ExperienceItem'
 import SkillsSection from './SkillSection'
+import TextWrapper from './TextWrapper'
 import { motion } from 'motion/react'
+import type { technologyType } from '../../components/icons/TechnologyIcon'
 
-type EducationItemType = {
+type ExperienceItemType = {
     institute: string
-    course?: string
+    title?: string
     start?: number
     end?: number
     grade?: string
@@ -17,15 +19,16 @@ type EducationItemType = {
 
 type SkillsType = {
     category: string
-    skills: string[]
+    skills: technologyType[]
 }
 
 const About = () => {
     const { aboutRef } = useContext(portfolioContext)
 
-    const educationList: EducationItemType[] = [
+    const educationList: ExperienceItemType[] = [
         {
             institute: 'University College London',
+            title: 'Msci Pharmacology',
             start: 2019,
             end: 2023,
             grade: '2 : 1',
@@ -33,7 +36,7 @@ const About = () => {
         {
             institute: 'HarvardX',
             end: 2023,
-            course: 'CS50X Web programming with Python and JavaScript',
+            title: 'CS50X Web programming with Python and JavaScript',
             information: [
                 'Advanced full-stack web development course',
                 'Learning Python (Django), SQLite, JavaScript, C',
@@ -43,7 +46,7 @@ const About = () => {
         {
             institute: 'HarvardX',
             end: 2023,
-            course: 'CS50 Introduction to Computer Science',
+            title: 'CS50 Introduction to Computer Science',
             information: [
                 'Learning HTML, CSS, C, Python (Flask), JavaScript',
                 'Solving problems and producing a PR tracker App (Flask, JavaScript, SQLite)',
@@ -55,54 +58,50 @@ const About = () => {
         {
             category: 'Frontend',
             skills: [
-                'ReactJS',
+                'React',
                 'JavaScript',
                 'TypeScript',
-                'NextJS',
                 'HTML',
                 'CSS',
-                'TailwindCSS',
+                'Tailwind',
             ],
         },
         {
             category: 'Backend',
-            skills: [
-                'Django',
-                'Flask',
-                'Python',
-                'MySQL',
-                'NodeJS',
-                'ExpressJS',
-                'NextJS',
-            ],
+            skills: ['Django', 'Python', 'MySQL', 'NodeJS', 'NextJS'],
         },
+    ]
+
+    const experienceList: ExperienceItemType[] = [
         {
-            category: 'General',
-            skills: [
-                'Git',
-                'Responsive Design',
-                'Figma',
-                'Jira',
-                'Jest',
-                'AWS Amplify',
-                'Agile Methodologies',
+            institute: 'I-Woman',
+            title: 'Junior Fullstack Developer',
+            start: 2024,
+            end: 2025,
+            information: [
+                'Designed intuitive mockups and wireframes using Figma to streamline project development.',
+                'Developed API endpoints in Next.js and TypeScript, incorporating AWS Amplify and Contentful for authentication and content storage.',
+                'Built core sections of the website in React and TypeScript, including authentication and forum functionalities, ensuring reusable and scalable components.',
+                'Collaborated with team members in an Agile environment, using Jira sprints to manage workflows and enhance productivity.',
+                'Conducted comprehensive unit testing on front-end components with Jest, ensuring robust and reliable functionality.',
             ],
         },
     ]
+
     return (
         <div
             ref={aboutRef}
-            className="min-h-screen bg-darkgray grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-10 items-start p-8 text-platinum"
+            className="min-h-screen bg-linear-to-b from-darkgray to-grayblue from-80% grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-10 items-start p-8 text-platinum"
             id="about-section"
         >
             <motion.div
-                className="flex flex-col gap-y-10"
+                className="flex flex-col gap-y-6 h-full"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ amount: 0.5, once: true }}
             >
-                <SectionHeader text="About Me" />
-                <div>
+                <SectionHeader text="About" />
+                <TextWrapper>
                     <p>
                         Software Developer with experience in modern
                         technologies such as React, TypeScript, Next.js. Proven
@@ -111,34 +110,49 @@ const About = () => {
                         a role to contribute to impactful projects and grow as a
                         developer.
                     </p>
-                </div>
-
-                <div className="flex flex-col gap-y-6">
+                </TextWrapper>
+                <div className="flex flex-col gap-y-6 w-full">
                     <SmallHeader text="Education" />
-                    <div className="flex flex-col gap-y-4">
-                        {educationList.map((item) => (
-                            <EducationItem item={item} />
-                        ))}
-                    </div>
+                    <TextWrapper>
+                        <div className="flex flex-col gap-y-4">
+                            {educationList.map((item) => (
+                                <ExperienceItem item={item} />
+                            ))}
+                        </div>
+                    </TextWrapper>
                 </div>
             </motion.div>
             <motion.div
-                className=" flex flex-col gap-y-10 h-full"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ amount: 0.5, once: true }}
+                className="h-full flex flex-col gap-y-6"
             >
-                <SectionHeader text="Skills" />
-                <div className="flex flex-col h-full gap-y-8">
-                    {SkillsList.map((item) => (
-                        <SkillsSection item={item} />
-                    ))}
+                <div className="flex flex-col gap-y-6">
+                    <SmallHeader text="Experience" />
+                    <TextWrapper>
+                        <div>
+                            {experienceList.map((item) => (
+                                <ExperienceItem item={item} />
+                            ))}
+                        </div>
+                    </TextWrapper>
+                </div>
+                <div className="flex flex-col gap-y-6">
+                    <SmallHeader text="Skills" />
+                    <motion.div className=" flex flex-col gap-y-6">
+                        <div className="flex h-full gap-x-6">
+                            {SkillsList.map((item) => (
+                                <SkillsSection item={item} />
+                            ))}
+                        </div>
+                    </motion.div>
                 </div>
             </motion.div>
         </div>
     )
 }
 
-export type { EducationItemType, SkillsType }
+export type { ExperienceItemType, SkillsType }
 
 export default About
