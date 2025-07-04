@@ -15,7 +15,7 @@ const Landing = () => {
                             Hi, I'm Jason
                         </p>
                         <p className="text-2xl opacity-50 ">
-                            Software developer
+                            Software Developer
                         </p>
                     </div>
                     <WebsiteLinks />

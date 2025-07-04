@@ -3,6 +3,7 @@ import Landing from './sections/landing/Landing'
 import About from './sections/about/About'
 import Projects from './sections/projects/Projects'
 import { createContext, useRef } from 'react'
+import Footer from './components/Footer'
 
 type portfolioContextType = {
     aboutRef: React.RefObject<HTMLDivElement | null> | null
@@ -17,6 +18,7 @@ function App() {
                 <Landing />
                 <About />
                 <Projects />
+                <Footer />
             </portfolioContext.Provider>
         </div>
     )
