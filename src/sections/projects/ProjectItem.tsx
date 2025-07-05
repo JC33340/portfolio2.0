@@ -15,8 +15,8 @@ const ProjectItem = ({ item }: ProjectItemComponentType) => {
             viewport={{ amount: 0.3, once: true }}
             className="flex even:flex-col even:lg:flex-row-reverse flex-col lg:flex-row gap-y-4 justify-center gap-x-6"
         >
-            <div className="w-full flex items-center justify-center">
-                <div className="carousel carousel-center bg-darkgray w-full lg:w-[95%] rounded-lg gap-x-10 p-4 shadow-xl">
+            <div className="w-full lg:w-[60%] flex items-center justify-center">
+                <div className="carousel carousel-center bg-darkgray w-full  rounded-lg gap-x-10 p-4 shadow-xl">
                     {item.photos.map((photo, i) => (
                         <div
                             key={i}
@@ -27,7 +27,7 @@ const ProjectItem = ({ item }: ProjectItemComponentType) => {
                     ))}
                 </div>
             </div>
-            <div className="w-full flex flex-col gap-y-4 ">
+            <div className="w-full lg:w-[40%] flex flex-col gap-y-4 ">
                 <SmallHeader text={item.name} />
                 <div className="opacity-70 text-justify flex flex-col gap-y-2 ">
                     {item.description.map((line, i) => (
@@ -80,3 +80,5 @@ const ProjectItem = ({ item }: ProjectItemComponentType) => {
 }
 
 export default ProjectItem
+
+// w-full lg:w-[95%]
