@@ -2,6 +2,7 @@ import './App.css'
 import Landing from './sections/landing/Landing'
 import About from './sections/about/About'
 import Projects from './sections/projects/Projects'
+import Header from './components/Header'
 import { createContext, useRef } from 'react'
 import Footer from './components/Footer'
 
@@ -15,6 +16,7 @@ function App() {
     return (
         <div className="font-Noto">
             <portfolioContext.Provider value={{ aboutRef }}>
+                <Header />
                 <Landing />
                 <About />
                 <Projects />

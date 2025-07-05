@@ -1,14 +1,9 @@
 const Photo = () => {
     return (
         <div>
-            {/* <img
-                className="h-80 rounded-[50%]"
-                src="/profilePic.png"
-                alt="Profile picture"
-            /> */}
             <img
                 className="h-80 sm:h-100 rounded-lg"
-                src="/test.png"
+                src="/profilePic.png"
                 alt="test pic"
             />
         </div>

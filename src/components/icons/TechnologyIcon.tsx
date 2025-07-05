@@ -25,7 +25,6 @@ const TechnologyIcon = ({ tech }: TechnologyIconType) => {
     const obj = techIndex.filter((item) => item.name === tech)
     let display: React.ReactNode
     if (obj.length > 0) {
-        console.log(obj)
         display = obj[0].svg
     }
 

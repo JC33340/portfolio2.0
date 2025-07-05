@@ -9,12 +9,18 @@ type ProjectItemComponentType = {
 
 const ProjectItem = ({ item }: ProjectItemComponentType) => {
     return (
-        <motion.div className="flex even:flex-col even:lg:flex-row-reverse flex-col lg:flex-row gap-y-4 justify-center gap-x-6">
+        <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ amount: 0.3, once: true }}
+            className="flex even:flex-col even:lg:flex-row-reverse flex-col lg:flex-row gap-y-4 justify-center gap-x-6"
+        >
             <div className="w-full flex items-center justify-center">
-                <div className="carousel carousel-center bg-darkgray w-full lg:w-[95%] rounded-lg gap-x-10 p-4">
-                    {item.photos.map((photo) => (
+                <div className="carousel carousel-center bg-darkgray w-full lg:w-[95%] rounded-lg gap-x-10 p-4 shadow-xl">
+                    {item.photos.map((photo, i) => (
                         <div
-                            className={`carousel-item ${item.photos.length > 1 ? 'w-[90%]' : 'w-full'}`}
+                            key={i}
+                            className={`carousel-item ${item.photos.length > 1 ? 'w-[80%]' : 'w-full'}`}
                         >
                             <img src={photo} className="rounded-lg"></img>
                         </div>
@@ -24,17 +30,17 @@ const ProjectItem = ({ item }: ProjectItemComponentType) => {
             <div className="w-full flex flex-col gap-y-4 ">
                 <SmallHeader text={item.name} />
                 <div className="opacity-70 text-justify flex flex-col gap-y-2 ">
-                    {item.description.map((line) => (
-                        <p>&#x2022; {line}</p>
+                    {item.description.map((line, i) => (
+                        <p key={i}>&#x2022; {line}</p>
                     ))}
                 </div>
                 <div className="flex flex-col gap-y-4 md:flex-row gap-x-4">
-                    <div className="flex gap-x-4 bg-greengray py-2 px-4 rounded-lg w-fit shadow-xl">
-                        {item.technologies.map((tech) => (
-                            <TechnologyIcon tech={tech} />
+                    <div className="flex gap-x-4 bg-purplegray py-2 px-4 rounded-lg w-fit shadow-xl">
+                        {item.technologies.map((tech, i) => (
+                            <TechnologyIcon key={i} tech={tech} />
                         ))}
                     </div>
-                    <div className="items-center justify-center py-2 px-4 rounded-lg shadow-xl flex gap-x-4 bg-greengray w-fit">
+                    <div className="items-center justify-center py-2 px-4 rounded-lg shadow-xl flex gap-x-4 bg-purplegray w-fit">
                         <a
                             href={item.github}
                             target="_blank"
@@ -47,23 +53,25 @@ const ProjectItem = ({ item }: ProjectItemComponentType) => {
                                 ></path>
                             </svg>
                         </a>
-                        <a
-                            target="_blank"
-                            href={item.link}
-                            className="opacity-50 hover:opacity-100 transition-all ease-in-out"
-                        >
-                            <svg viewBox="0 0 24 24" fill="none" width={40}>
-                                <g id="SVGRepo_iconCarrier">
-                                    <path
-                                        d="M9 17H7C4.23858 17 2 14.7614 2 12C2 9.23858 4.23858 7 7 7H9M15 17H17C19.7614 17 22 14.7614 22 12C22 9.23858 19.7614 7 17 7H15M7 12L17 12"
-                                        className="stroke-platinum"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                    ></path>{' '}
-                                </g>
-                            </svg>
-                        </a>
+                        {item.link && (
+                            <a
+                                target="_blank"
+                                href={item.link}
+                                className="opacity-50 hover:opacity-100 transition-all ease-in-out"
+                            >
+                                <svg viewBox="0 0 24 24" fill="none" width={40}>
+                                    <g id="SVGRepo_iconCarrier">
+                                        <path
+                                            d="M9 17H7C4.23858 17 2 14.7614 2 12C2 9.23858 4.23858 7 7 7H9M15 17H17C19.7614 17 22 14.7614 22 12C22 9.23858 19.7614 7 17 7H15M7 12L17 12"
+                                            className="stroke-platinum"
+                                            strokeWidth="2"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                        ></path>{' '}
+                                    </g>
+                                </svg>
+                            </a>
+                        )}
                     </div>
                 </div>
             </div>

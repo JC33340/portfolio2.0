@@ -20,8 +20,10 @@ const ExperienceItem = ({ item }: ExperienceItemComponentType) => {
             </p>
             {item.grade && <p>Grade: {item.grade}</p>}
             <ul className="flex flex-col gap-y-2">
-                {item.information?.map((line) => (
-                    <li className="text-sm opacity-70">&#x2022; {line}</li>
+                {item.information?.map((line, i) => (
+                    <li key={i} className="text-sm opacity-70">
+                        &#x2022; {line}
+                    </li>
                 ))}
             </ul>
         </div>

@@ -115,8 +115,8 @@ const About = () => {
                     <SmallHeader text="Education" />
                     <TextWrapper>
                         <div className="flex flex-col gap-y-4">
-                            {educationList.map((item) => (
-                                <ExperienceItem item={item} />
+                            {educationList.map((item, i) => (
+                                <ExperienceItem key={i} item={item} />
                             ))}
                         </div>
                     </TextWrapper>
@@ -132,8 +132,8 @@ const About = () => {
                     <SmallHeader text="Experience" />
                     <TextWrapper>
                         <div>
-                            {experienceList.map((item) => (
-                                <ExperienceItem item={item} />
+                            {experienceList.map((item, i) => (
+                                <ExperienceItem key={i} item={item} />
                             ))}
                         </div>
                     </TextWrapper>
@@ -142,8 +142,8 @@ const About = () => {
                     <SmallHeader text="Skills" />
                     <motion.div className=" flex flex-col gap-y-6">
                         <div className="flex h-full gap-x-6">
-                            {SkillsList.map((item) => (
-                                <SkillsSection item={item} />
+                            {SkillsList.map((item, i) => (
+                                <SkillsSection key={i} item={item} />
                             ))}
                         </div>
                     </motion.div>
