@@ -83,7 +83,7 @@ const Projects = () => {
     ]
 
     return (
-        <div className="bg-grayblue text-platinum min-h-screen flex flex-col items-center p-8 gap-y-20">
+        <div className="bg-grayblue text-platinum min-h-screen flex flex-col items-center p-8 gap-y-20 2xl:px-50">
             <SectionHeader text="Projects" />
             <div className="flex flex-col gap-y-15 lg:gap-y-30 w-full">
                 {projectList.map((item, i) => (

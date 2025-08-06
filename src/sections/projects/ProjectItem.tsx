@@ -29,7 +29,7 @@ const ProjectItem = ({ item }: ProjectItemComponentType) => {
             </div>
             <div className="w-full lg:w-[40%] flex flex-col gap-y-4 ">
                 <SmallHeader text={item.name} />
-                <div className="opacity-70 text-justify flex flex-col gap-y-2 ">
+                <div className="opacity-70 text-justify flex flex-col gap-y-2 2xl:text-xl">
                     {item.description.map((line, i) => (
                         <p key={i}>&#x2022; {line}</p>
                     ))}

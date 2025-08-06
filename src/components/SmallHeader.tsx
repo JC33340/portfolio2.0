@@ -5,7 +5,7 @@ type SmallHeaderType = {
 const SmallHeader = ({ text }: SmallHeaderType) => {
     return (
         <div>
-            <p className="text-3xl font-semibold">{text}</p>
+            <p className="text-3xl font-semibold 2xl:text-4xl">{text}</p>
         </div>
     )
 }

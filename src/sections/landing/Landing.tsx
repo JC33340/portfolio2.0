@@ -11,10 +11,10 @@ const Landing = () => {
             <div className="flex flex-col md:flex-row gap-y-10 justify-start md:justify-between w-full h-full items-center">
                 <div className="text-white flex items-center flex-col gap-y-4 w-full md:h-full justify-center p-8 md:p-0">
                     <div className="flex flex-col gap-y-2 items-center justify-center animate-fadeIn text-platinum">
-                        <p className="font-bold text-6xl sm:text-7xl text-center">
+                        <p className="font-bold text-6xl sm:text-7xl 2xl:text-8xl text-center">
                             Hi, I'm Jason
                         </p>
-                        <p className="text-2xl opacity-50 ">
+                        <p className="text-2xl opacity-50 2xl:text-4xl">
                             Software Developer
                         </p>
                     </div>

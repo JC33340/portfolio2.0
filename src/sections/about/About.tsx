@@ -91,7 +91,7 @@ const About = () => {
     return (
         <div
             ref={aboutRef}
-            className="min-h-screen bg-linear-to-b from-darkgray to-grayblue from-80% grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-10 items-start p-8 text-platinum"
+            className="min-h-screen bg-linear-to-b from-darkgray to-grayblue from-80% grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-10 items-start p-8 text-platinum 2xl:px-50"
             id="about-section"
         >
             <motion.div
@@ -102,7 +102,7 @@ const About = () => {
             >
                 <SectionHeader text="About" />
                 <TextWrapper>
-                    <p>
+                    <p className="2xl:text-2xl/10">
                         Software Developer with experience in modern
                         technologies such as React, TypeScript, Next.js. Proven
                         ability to adapt quickly, solve complex technical
