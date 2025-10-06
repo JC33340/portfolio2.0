@@ -13,9 +13,9 @@ const ProjectItem = ({ item }: ProjectItemComponentType) => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ amount: 0.3, once: true }}
-            className="flex even:flex-col even:lg:flex-row-reverse flex-col lg:flex-row gap-y-4 justify-center gap-x-6"
+            className="flex even:flex-col even:lg:flex-row-reverse flex-col lg:flex-row gap-y-4 items-center lg:items-start justify-center gap-x-6"
         >
-            <div className="w-full lg:w-[60%] flex items-center justify-center">
+            <div className="w-[80%] lg:w-[60%] flex flex-col gap-y-5 items-center lg:items-start justify-center">
                 <div className="carousel carousel-center bg-darkgray w-full  rounded-lg gap-x-10 p-4 shadow-xl">
                     {item.photos.map((photo, i) => (
                         <div
@@ -24,14 +24,6 @@ const ProjectItem = ({ item }: ProjectItemComponentType) => {
                         >
                             <img src={photo} className="rounded-lg"></img>
                         </div>
-                    ))}
-                </div>
-            </div>
-            <div className="w-full lg:w-[40%] flex flex-col gap-y-4 ">
-                <SmallHeader text={item.name} />
-                <div className="opacity-70 text-justify flex flex-col gap-y-2 2xl:text-xl">
-                    {item.description.map((line, i) => (
-                        <p key={i}>&#x2022; {line}</p>
                     ))}
                 </div>
                 <div className="flex flex-col gap-y-4 md:flex-row gap-x-4">
@@ -73,6 +65,14 @@ const ProjectItem = ({ item }: ProjectItemComponentType) => {
                             </a>
                         )}
                     </div>
+                </div>
+            </div>
+            <div className="flex flex-col gap-y-4">
+                <SmallHeader text={item.name} />
+                <div className="opacity-70 text-justify flex flex-col gap-y-2 2xl:text-xl">
+                    {item.description.map((line, i) => (
+                        <p key={i}>&#x2022; {line}</p>
+                    ))}
                 </div>
             </div>
         </motion.div>

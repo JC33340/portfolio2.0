@@ -1,6 +1,5 @@
 import { useContext } from 'react'
 import { portfolioContext } from '../../App'
-import SectionHeader from '../../components/SectionHeader'
 import SmallHeader from '../../components/SmallHeader'
 import ExperienceItem from './ExperienceItem'
 import SkillsSection from './SkillSection'
@@ -100,7 +99,7 @@ const About = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ amount: 0.5, once: true }}
             >
-                <SectionHeader text="About" />
+                <SmallHeader text="About" />
                 <TextWrapper>
                     <p className="2xl:text-2xl/10">
                         Software Developer with experience in modern
