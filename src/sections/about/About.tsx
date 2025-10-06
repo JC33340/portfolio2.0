@@ -90,7 +90,7 @@ const About = () => {
     return (
         <div
             ref={aboutRef}
-            className="min-h-screen bg-linear-to-b from-darkgray to-grayblue from-80% grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-10 items-start p-8 text-platinum 2xl:px-20"
+            className="min-h-screen bg-linear-to-b from-darkgray to-grayblue from-80% grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-10 items-start p-8 text-platinum"
             id="about-section"
         >
             <motion.div
