@@ -101,7 +101,7 @@ const About = () => {
             >
                 <SmallHeader text="About" />
                 <TextWrapper>
-                    <p className="2xl:text-xl">
+                    <p className="2xl:text-lg">
                         Software Developer with experience in modern
                         technologies such as React, TypeScript, Next.js. Proven
                         ability to adapt quickly, solve complex technical
