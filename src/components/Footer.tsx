@@ -6,4 +6,6 @@ const Footer = () => {
     )
 }
 
+// rand
+
 export default Footer
